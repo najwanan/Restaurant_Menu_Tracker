@@ -7,6 +7,9 @@ const MongoStore = require("connect-mongo")(session);
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
+const indexRouter = require('./routes/index');
+const loginRouter = require("./routes/login");
+const menuRouter = require("./routes/menu");
 
 
 require("dotenv").config({ path: "./config/.env" });
@@ -38,7 +41,9 @@ app.use(
 app.use(flash());
 
 //add routes here
-
+app.use('/', indexRouter)
+app.use('/menu', menuRouter)
+app.use('/login', loginRouter);
 
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
