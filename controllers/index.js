@@ -1,5 +1,5 @@
 const schemas = require('../models/schema.js')
-
+//searches data, renders to homepage
 module.exports = {
     getHome: async (req, res) => {
         let menu = schemas.menu

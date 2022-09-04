@@ -1,0 +1,1 @@
+//from the router display the logiin page, display the signup page, logout
